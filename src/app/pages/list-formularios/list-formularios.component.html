@@ -1,0 +1,9 @@
+<span *ngIf="listadoFormularios.length == 0">No existen contactos</span>
+
+<ul>
+    <li *ngFor="let formulario of listadoFormularios">
+       <a ((click)="editar(formulario)")> {{formulario.nombre}} | {{formulario.correo}} | {{formulario.mensaje}}</a>
+       <a href="" (click)="eliminar(formulario)">Eliminar</a>
+    </li>
+    
+</ul>

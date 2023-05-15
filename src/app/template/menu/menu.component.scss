@@ -1,0 +1,50 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contenedor {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Estilos para el sidebar */
+  .sidebar {
+    background-color: #d8700e;
+    width: 200px;
+    height: 100%;
+  }
+  
+  nav {
+    margin: 0;
+    padding: 20px;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    margin: 0;
+  }
+  
+  a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  a:hover {
+    background-color: #d8b989;
+  }
+  
+  /* Estilos para el contenido */
+  .contenido {
+    flex: 1;
+    padding: 20px;
+  }

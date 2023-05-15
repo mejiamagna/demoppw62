@@ -1,0 +1,26 @@
+<head>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formulario.component.scss">
+  </head>
+  <body>
+    <div class="contenedor">
+    <h1>Formulario de contacto</h1>
+    <form action="#" method="post">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="formulario.nombre" name="nombre" >
+      </div>
+      <div>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" [(ngModel)]="formulario.correo" name="correo">
+      </div>
+      <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" [(ngModel)]="formulario.mensaje" name="mensaje"></textarea>
+      </div>
+      <div>
+        <button (click)="guardar()">Enviar mensaje</button>
+      </div>
+    </form>
+  </div>
+  </body>

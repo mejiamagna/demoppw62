@@ -1,0 +1,87 @@
+
+html {
+    background-color: #96e6cf;
+}
+app-header {
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px; /* Opcional: establece la altura deseada para la barra superior */
+  background-color: #f2f2f2;
+  padding: 10px;
+  
+  p {
+    margin: 0;
+  }
+
+  .encabezado {
+    margin-top: 70px; /* Opcional: asegúrate de que el contenido de la página no quede oculto detrás de la barra superior */
+  }
+}
+
+app-menu {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* Opcional: establece el ancho deseado para la barra lateral */
+  height: 100%;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-top: 180px; /* Opcional: asegúrate de que el contenido de la página no quede oculto detrás del encabezado */
+  margin-bottom: 70px; /* Opcional: asegúrate de que el contenido de la página no quede oculto detrás del pie de página */
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+app-form {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px; /* Opcional: establece el ancho deseado para la barra lateral */
+    height: 100%;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-top: 180px; /* Opcional: asegúrate de que el contenido de la página no quede oculto detrás del encabezado */
+    margin-bottom: 70px; /* Opcional: asegúrate de que el contenido de la página no quede oculto detrás del pie de página */
+  
+}
+
+app-footer {
+    position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px; /* Opcional: establece la altura deseada para el pie de página */
+  background-color: #f2f2f2;
+  padding: 10px;
+  
+}
+
+
+
+router-oulet {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  float: CENTER;
+}
+
+#content {
+  margin: auto;
+  border: 2px solid rgb(157, 148, 226);
+  width: 60%;
+  min-height: 315px;
+  padding-top: 20%;
+  margin-top: 180px;
+}
