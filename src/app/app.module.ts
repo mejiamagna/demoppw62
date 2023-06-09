@@ -19,6 +19,18 @@ import { FormsModule } from '@angular/forms';
 import { NuevoContactoComponent } from './paginas/nuevo-contacto/nuevo-contacto.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ListFormulariosComponent } from './pages/list-formularios/list-formularios.component';
+import { ActFormularioComponent } from './pages/act-formulario/act-formulario.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NativeDateModule } from '@angular/material/core';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
 
 @NgModule({
   declarations: [
@@ -37,15 +49,25 @@ import { ListFormulariosComponent } from './pages/list-formularios/list-formular
     ContactoComponent,
     NuevoContactoComponent,
     FormularioComponent,
-    ListFormulariosComponent
-
+    ListFormulariosComponent,
+    ActFormularioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatDatepickerModule, 
+    MatInputModule,
+    MatFormFieldModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    
   ],
-  providers: [],
+  providers: [
+   {provide: FIREBASE_OPTIONS, useValue: environment.firebase},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,39 +1,37 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Formulario } from 'src/app/domain/form';
+import { FormService } from '../../service/form.service';
+import { Router } from '@angular/router';
 import { FormularioContactos } from 'src/app/model/Form-model';
-import { FormService } from 'src/app/service/form.service';
 
 import { v4 as uuid } from 'uuid';
+
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.scss'],
+  selector: 'app-act-formulario',
+  templateUrl: './act-formulario.component.html',
+  styleUrls: ['./act-formulario.component.scss']
 })
-export class FormularioComponent {
-  
+export class ActFormularioComponent implements OnInit{
+
   formulario: Formulario = new Formulario();
 
   nombre: string = '';
   correo: string = '';
   mensaje: string = '';
 
-  constructor(private FormService: FormService, private router: Router) {
-    let params = this.router.getCurrentNavigation()?.extras.queryParams;
-    if (params) {
-      console.log(params);
-      this.formulario = new Formulario();
-      this.formulario = params['formulario'];
-    }
+  formActualizar: any;
+  constructor(private FormService: FormService, private router: Router,private srv:FormService) {
+    // this.listadoFormularios = FormService.getList();
+    // console.log('listadoFormularios', this.listadoFormularios);
+
+  }
+  ngOnInit(): void {
+    console.log(this.srv.formularioActual)
+    this.formActualizar=this.srv.formularioActual
   }
 
-  guardar() {
-    console.log(this.formulario);
-    this.FormService.save(this.formulario);
-    this.formulario = new Formulario();
-  }
 
-  guardar2() {
+  actualizar() {
     const myId = uuid();
 
     const valores: FormularioContactos = {
@@ -56,10 +54,6 @@ export class FormularioComponent {
       localStorage.setItem('contactos', JSON.stringify(contactos));
     }
     this.limpiarCampos();
-
-    console.log(this.formulario);
-    this.FormService.save(this.formulario);
-    this.formulario = new Formulario();
   }
 
   limpiarCampos() {
@@ -67,4 +61,6 @@ export class FormularioComponent {
     this.correo = '';
     this.mensaje = '';
   }
+  
+
 }

@@ -1,0 +1,20 @@
+<div class="contenedor">
+    <h1>Formulario de contacto</h1>
+    <form action="#" method="post">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="formActualizar.nombre" name="nombre" />
+      </div>
+      <div>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" [(ngModel)]="formActualizar.correo" name="correo" />
+      </div>
+      <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" [(ngModel)]="formActualizar.mensaje" name="mensaje"></textarea>
+      </div>
+      <div>
+        <button (click)="actualizar()">ACTUALIZAR FORMULARIO</button>
+      </div>
+    </form>
+  </div>

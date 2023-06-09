@@ -9,6 +9,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { FormComponent } from './template/form/form.component';
 import { ListFormulariosComponent } from './pages/list-formularios/list-formularios.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
+import { ActFormularioComponent } from './pages/act-formulario/act-formulario.component';
 
 const routes: Routes = [
   {path: "paginas/listacontactos", component: ListContactosComponent},
@@ -18,7 +19,9 @@ const routes: Routes = [
   {path: "paginas/oficina", component: OficinaComponent},
   {path: "paginas/tecnologia", component: TecnologiaComponent},
   {path: "paginas/nuevo-formulario", component: FormularioComponent},
-  {path: "paginas/listaformularios", component: ListFormulariosComponent}
+  {path: "paginas/listaformularios", component: ListFormulariosComponent},
+  {path: "paginas/nuevo-formulario:/id", component: FormularioComponent},
+  {path: "paginas/actualizarformulario", component: ActFormularioComponent}
 ];
 
 @NgModule({

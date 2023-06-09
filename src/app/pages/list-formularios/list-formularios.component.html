@@ -1,9 +1,67 @@
 <span *ngIf="listadoFormularios.length == 0">No existen contactos</span>
 
-<ul>
-    <li *ngFor="let formulario of listadoFormularios">
-       <a ((click)="editar(formulario)")> {{formulario.nombre}} | {{formulario.correo}} | {{formulario.mensaje}}</a>
-       <a href="" (click)="eliminar(formulario)">Eliminar</a>
-    </li>
-    
-</ul>
+<div class="col">
+  <div class="card mb-2">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <table class="table">
+        <thead>
+          <!--
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let lista"> {{lista.id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> NOMBRE </th>
+            <td mat-cell *matCellDef="let lista"> {{lista.nombre}} </td>
+          </ng-container>
+          <ng-container matColumnDef="correo">
+            <th mat-header-cell *matHeaderCellDef> CORREO </th>
+            <td mat-cell *matCellDef="let lista"> {{lista.correo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="mensaje">
+            <th mat-header-cell *matHeaderCellDef> MENSAJE </th>
+            <td mat-cell *matCellDef="let lista"> {{lista.mensaje}} </td>
+          </ng-container>
+          <ng-container matColumnDef="accion">
+            <th mat-header-cell *matHeaderCellDef> ACCION </th>
+            <td mat-cell *matCellDef="let lista"> {{lista.accion}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          -->
+          
+          <tr>
+          
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">CORREO</th>
+            <th scope="col">MENSAJE</th>
+            <th scope="col">Accion</th>
+        
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of listadoFormularios">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.correo }}</td>
+            <td>{{ item.mensaje }}</td>
+            <button (click)="update(item)">Editar</button>
+            <button (click)="eliminar(item)" class="btn btn-danger">Delete</button>
+          </tr>
+
+          <tr *ngFor="let item of listadoFormulariosFire | async">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.correo }}</td>
+            <td>{{ item.mensaje }}</td>
+            <button (click)="update(item)">Editar</button>
+            <button (click)="eliminar(item)" class="btn btn-danger">Delete</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
