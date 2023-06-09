@@ -24,6 +24,7 @@ export class FormService {
   save(formulario: Formulario){
     this.formularios.push(formulario)
     console.log(this.formularios)
+    formulario.uid = this.db.createId();
     this.create(formulario)
   }
 
@@ -37,7 +38,7 @@ export class FormService {
   }
 
   create(formulario: Formulario): any {
-    return this.formulariosRef.add({ ...formulario});
+    return this.formulariosRef.doc(formulario.uid).set({ ...formulario});
   }
 
   update(id: string, data: any): Promise<void> {
@@ -45,6 +46,11 @@ export class FormService {
   }
 
   delete(id: string): Promise <void> {
+    this.getList().forEach(Element => {
+      if(Element.uid!=id || id == '' ){
+        console.log("Sin valor")
+      }
+    })
     return this.formulariosRef.doc(id).delete();
   }
 

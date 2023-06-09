@@ -47,6 +47,10 @@ export class ListFormulariosComponent implements OnInit {
       }
   }
 
+  eliminar1(formulario: Formulario) {
+    this.FormService.delete(formulario.uid)
+  }
+  
   getTasks() {
     this.listadoFormularios = [];
     console.log('aqui');

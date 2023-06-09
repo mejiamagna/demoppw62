@@ -49,7 +49,7 @@
             <td>{{ item.correo }}</td>
             <td>{{ item.mensaje }}</td>
             <button (click)="update(item)">Editar</button>
-            <button (click)="eliminar(item)" class="btn btn-danger">Delete</button>
+            <!-- <button (click)="eliminar(item)" class="btn btn-danger">Delete</button>--->
           </tr>
 
           <tr *ngFor="let item of listadoFormulariosFire | async">
@@ -58,7 +58,7 @@
             <td>{{ item.correo }}</td>
             <td>{{ item.mensaje }}</td>
             <button (click)="update(item)">Editar</button>
-            <button (click)="eliminar(item)" class="btn btn-danger">Delete</button>
+            <button (click)="eliminar1(item)" class="btn btn-danger">Delete</button>
           </tr>
         </tbody>
       </table>

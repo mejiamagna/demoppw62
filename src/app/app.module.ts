@@ -30,6 +30,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { ProductosComponent } from './pages/productos/productos.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     FormularioComponent,
     ListFormulariosComponent,
     ActFormularioComponent,
+    ProductosComponent,
   ],
   imports: [
     BrowserModule,
