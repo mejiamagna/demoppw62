@@ -15,6 +15,7 @@ export class ListFormulariosComponent implements OnInit {
 
   listadoFormularios: FormularioContactos[] = [];
   listadoFormulariosFire: any;
+  listadoFormulariosWS: any;
 
   constructor(private FormService: FormService, private router: Router,private srv:FormService) {
     this.listadoFormularios = FormService.getList();

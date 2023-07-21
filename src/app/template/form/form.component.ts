@@ -18,4 +18,14 @@ export class FormComponent {
   nuevo() {
     this.router.navigate(['paginas/nuevo-formulario'])
   }
+
+  listarContacto() {
+    this.router.navigate(['paginas/listacontactos'])
+  }
+
+  nuevoContacto() {
+    this.router.navigate(['paginas/nuevo-contacto'])
+  }
 }
+
+

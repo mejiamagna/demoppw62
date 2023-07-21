@@ -29,7 +29,13 @@ export class FormularioComponent {
 
   guardar() {
     console.log(this.formulario);
-    this.FormService.save(this.formulario);
+   
+   /* //this.FormService.save(this.formulario);
+    this.personasService.save(this.formulario).suscribe(data => {
+
+    })
+
+    */
     this.formulario = new Formulario();
   }
 

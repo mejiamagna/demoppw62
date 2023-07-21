@@ -1,11 +1,33 @@
-<p>list-contactos works!</p>
-
 <span *ngIf="listadoContactos.length == 0">No existen contactos</span>
 
-<ul>
-    <li *ngFor="let contacto of listadoContactos">
-       <a ((click)="editar(contacto)")> {{contacto.cedula}} | {{contacto.nombre}} | {{contacto.direccion}}</a>
-       <a href="" (click)="eliminar(contacto)">Eliminar</a>
-    </li>
-    
-</ul>
+<div class="col">
+  <div class="card mb-2">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <table class="table">
+        <thead>
+          
+          <tr>
+            <th scope="col">CEDULA</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">DIRECCION</th>
+            <th scope="col">ACCION</th>
+        
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of listadoContactos">
+            <!--<td>{{ item.id }}</td>-->
+            <td>{{ item.cedula }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.direccion }}</td>
+            <button (click)="update(item)">Editar</button>
+            <!-- <button (click)="eliminar(item)" class="btn btn-danger">Delete</button>--->
+            <button (click)="eliminar1(item)" class="btn btn-danger">Delete</button>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

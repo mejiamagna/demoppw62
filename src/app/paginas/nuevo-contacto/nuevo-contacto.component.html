@@ -1,1 +1,26 @@
-<p>nuevo-contacto works!</p>
+<mat-form-field class="example-full-width">
+    <mat-label>Cédula:</mat-label>
+    <input matInput placeholder="Ex. Pizza" id="txtCedula" [(ngModel)]="contacto.cedula">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <mat-label>Nombre:</mat-label>
+    <input matInput placeholder="Ex. Pizza" id="txtCedula" [(ngModel)]="contacto.nombre">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <mat-label>Dirección:</mat-label>
+    <input matInput placeholder="Ex. Pizza" id="txtDireccion" [(ngModel)]="contacto.direccion">
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+<br/>
+<br/>
+
+<button (click)="guardar()">Guardar</button>
+

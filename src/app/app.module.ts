@@ -31,7 +31,8 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ProductosComponent } from './pages/productos/productos.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ActContactoComponent } from './pages/act-contacto/act-contacto.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
     MenuComponent,
     FormComponent,
     FooterComponent,
+    ContactoComponent,
     ListContactosComponent,
     TecnologiaComponent,
     InicioComponent,
@@ -47,12 +49,12 @@ import { ProductosComponent } from './pages/productos/productos.component';
     OficinaComponent,
     UtilesEscolaresComponent,
     ManualidadesComponent,
-    ContactoComponent,
     NuevoContactoComponent,
     FormularioComponent,
     ListFormulariosComponent,
     ActFormularioComponent,
     ProductosComponent,
+    ActContactoComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
     MatDatepickerModule, 
     MatInputModule,
     MatFormFieldModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     

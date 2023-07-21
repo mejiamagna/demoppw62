@@ -1,0 +1,22 @@
+<div class="contenedor">
+    <h1>CONTACTO</h1>
+    <form action="#" method="post">
+        <div>
+            <label for="nombre">Cedula:</label>
+             <input type="text" id="cedula" [(ngModel)]="contactoActualizar.cedula" name="cedula" />
+        </div>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="contactoActualizar.nombre" name="nombre" />
+      </div>
+      <div>
+        <label for="correo">Direccion:</label>
+        <input type="text" id="direccion" [(ngModel)]="contactoActualizar.direccion" name="direccion" />
+      </div>
+      <div>
+  
+      
+        <button (click)="actualizar1()">ACTUALIZAR CONTACTO</button>
+      </div>
+    </form>
+  </div>
